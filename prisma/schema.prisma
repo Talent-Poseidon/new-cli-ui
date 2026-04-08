@@ -60,3 +60,27 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model CompetencyTemplate {
+  id        String   @id @default(cuid())
+  name      String
+  fileName  String
+  fileUrl   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model JobStandard {
+  id               String   @id @default(cuid())
+  jobName          String
+  scoreExpectation Float
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Scenario {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
